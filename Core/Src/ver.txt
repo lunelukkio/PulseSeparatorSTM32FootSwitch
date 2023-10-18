@@ -1,0 +1,95 @@
+TIM4 (PB6) for the 3rd PWM pulse output (no use)
+TIM5 for the 3rd pulse timer (no use)
+
+TIM2 (PA0) for the 1st PWM pulse output
+TIM3 (PC6) for the 2nd PWM pulse output
+TIM6 for the 1st pulse timer
+TIM7 for the 2nd pulse timer
+TIM15 (PB15) LED Foot switch PWM pulse output
+
+EXIT 0 (non)
+EXIT1　(PA1) recoding trigger from a camera
+EXTI2　(PC2) phase A rotary encoder
+EXIT3　(PC3) phase B rotary encoder (no use: for more accurate signal)
+EXIT4 (PC4) for cursor select : 4 position : pull-down: to ５V power
+EXIT5-9　5-for stimulator trigger from software
+EXTI9_5 timer interupt for PWM pulse
+EXIT10-15　13-quick setup push button（stm32 blue button）
+
+short C1 C2 length of each channe
+
+--------------------------------------------------------------------------------
+
+Ver 0.184
+deleted long delay mode(current mode 3)
+
+Vew 0.183
+chaged cursol select switch from pull-down to pull-up
+
+Ver 0.182
+change TIM15 enable switch during output laser pulse
+change TIM15 to 1000Hz
+
+Ver 0.181
+added Foot switch function with a logic IC
+
+Ver 0.176
+removed the bug with 0ms length
+
+Ver 0.174
+2021/04/07
+changed rotary functions end default
+
+Ver 0.173
+2020/11/18
+fixed bug in CW laser mode
+
+Ver 0.172
+2020/09/26
+moved code for a rotary encoder in stim32l4xx_it.c to rotary_encoder.c  
+
+Ver 0.171
+2020/09/24
+using TIM interrupt after EXTI interrupt 
+
+Ver 0.170
+2020/09/12
+added code for new rotary encorder
+changed CW mode text
+
+Ver 0.162
+2020/07/01
+added 50us of laser pulse width and 104ms of pulse length
+
+Ver 0.161
+2020/06/22
+added desplaying "recording..." during recording
+
+Ver 0.16
+2020/06/18
+added short Na mode in LED blink #4
+
+Ver 0.15
+2020/06/12
+made the short channel recording mode
+added continuos wave mode
+
+Ver 0.132
+2020/03/10
+deleted the timer 5. Set register_EGR_UG of the timers for reseting timer
+
+Ver 0.131
+2020/03/04
+adjusted delay rotary endodor 
+
+Ver 0.13 <<no stable>>
+2020/03/02
+small code change. added explanation for code. longest pulse duration is changed from 2000us to 5000us.
+
+Ver 0.12 <<no stable>>
+2020/02/29
+added setup function
+
+Ver.0.1
+stable ver
+

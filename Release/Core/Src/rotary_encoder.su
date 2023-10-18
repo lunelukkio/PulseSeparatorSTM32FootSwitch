@@ -1,0 +1,2 @@
+rotary_encoder.c:34:6:rotary_encorder_forward	32	static
+rotary_encoder.c:161:6:rotary_encorder_backward	32	static

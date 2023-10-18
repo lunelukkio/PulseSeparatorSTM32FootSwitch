@@ -1,0 +1,3 @@
+display_lcd.c:29:7:int2char	8	static
+display_lcd.c:36:6:write_LCD	8	static
+display_lcd.c:123:6:write_cur	8	static
