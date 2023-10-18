@@ -1,0 +1,19 @@
+TIM4 (PB6) for the 3rd PWM pulse output (no use)
+TIM5 for the 3rd pulse timer (no use)
+
+TIM2 (PA0) for the 1st PWM pulse output
+TIM3 (PC6) for the 2nd PWM pulse output
+TIM6 for the 1st pulse timer
+TIM7 for the 2nd pulse timer
+TIM15 (PB15) LED Foot switch PWM pulse output
+
+EXIT 0 (non)
+EXIT1　(PA1) recoding trigger from a camera
+EXTI2　(PC2) phase A rotary encoder
+EXIT3　(PC3) phase B rotary encoder (no use: for more accurate signal)
+EXIT4 (PC4) for cursor select : 4 position : pull-down: to ５V power
+EXIT5-9　5-for stimulator trigger from software
+EXIT10-15　13-quick setup push button（stm32 blue button）
+
+short C1 C2 length of each channel
+
