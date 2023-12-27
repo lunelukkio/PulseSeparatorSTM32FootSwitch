@@ -231,7 +231,7 @@ void EXTI1_IRQHandler(void)
   /* USER CODE BEGIN EXTI1_IRQn 0 */
 
   /* USER CODE END EXTI1_IRQn 0 */
-  HAL_GPIO_EXTI_IRQHandler(GPIO_PIN_1);
+  HAL_GPIO_EXTI_IRQHandler(Camera_trigger_Pin);
   /* USER CODE BEGIN EXTI1_IRQn 1 */
 
   if(PWM_length == 0){					//exit interrupt with no laser
@@ -302,7 +302,7 @@ void EXTI2_IRQHandler(void)
   /* USER CODE BEGIN EXTI2_IRQn 0 */
 
   /* USER CODE END EXTI2_IRQn 0 */
-  HAL_GPIO_EXTI_IRQHandler(GPIO_PIN_2);
+  HAL_GPIO_EXTI_IRQHandler(Rotary_encorder_A_Pin);
   /* USER CODE BEGIN EXTI2_IRQn 1 */
 
   //Rotary encoder detection
@@ -335,7 +335,7 @@ void EXTI3_IRQHandler(void)
   /* USER CODE BEGIN EXTI3_IRQn 0 */
 
   /* USER CODE END EXTI3_IRQn 0 */
-  HAL_GPIO_EXTI_IRQHandler(GPIO_PIN_3);
+  HAL_GPIO_EXTI_IRQHandler(Rotary_encorder_B_Pin);
   /* USER CODE BEGIN EXTI3_IRQn 1 */
 
   EXTI->IMR1 = 0xff820000;				//disable EXTI LINE1 and 15
@@ -366,7 +366,7 @@ void EXTI4_IRQHandler(void)
   /* USER CODE BEGIN EXTI4_IRQn 0 */
 
   /* USER CODE END EXTI4_IRQn 0 */
-  HAL_GPIO_EXTI_IRQHandler(GPIO_PIN_4);
+  HAL_GPIO_EXTI_IRQHandler(Cursor_Pin);
   /* USER CODE BEGIN EXTI4_IRQn 1 */
 
   //push the dial (move cur)
@@ -402,8 +402,8 @@ void EXTI9_5_IRQHandler(void)
   /* USER CODE BEGIN EXTI9_5_IRQn 0 */
 
   /* USER CODE END EXTI9_5_IRQn 0 */
-  HAL_GPIO_EXTI_IRQHandler(GPIO_PIN_5);
-  HAL_GPIO_EXTI_IRQHandler(GPIO_PIN_7);
+  HAL_GPIO_EXTI_IRQHandler(stim_camera_trigger_Pin);
+  HAL_GPIO_EXTI_IRQHandler(stim_software_trigger_Pin);
   /* USER CODE BEGIN EXTI9_5_IRQn 1 */
 
   //trigger for stimulator (test)
@@ -429,7 +429,7 @@ void EXTI15_10_IRQHandler(void)
   /* USER CODE BEGIN EXTI15_10_IRQn 0 */
 
   /* USER CODE END EXTI15_10_IRQn 0 */
-  HAL_GPIO_EXTI_IRQHandler(GPIO_PIN_13);
+  HAL_GPIO_EXTI_IRQHandler(B1_Pin);
   /* USER CODE BEGIN EXTI15_10_IRQn 1 */
 
   //quick setting button
@@ -587,4 +587,3 @@ void TIM7_IRQHandler(void)
 /* USER CODE BEGIN 1 */
 
 /* USER CODE END 1 */
-/************************ (C) COPYRIGHT STMicroelectronics *****END OF FILE****/

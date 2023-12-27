@@ -13,7 +13,7 @@
 #include "i2c-lcd.h"
 
 extern int current_mode; 	// 0 = normal, 1 = ch1 short recording, 2 = ch2 short recording
-int CW_mode;			// 0 = normal(pulse), 1 = ch1 continuous wave, 2 = ch2 CW, 3 ch1&2 CW
+extern int CW_mode;			// 0 = normal(pulse), 1 = ch1 continuous wave, 2 = ch2 CW, 3 ch1&2 CW
 
 extern int PWM_delay;		//us  delay between the trigger signal and the first laser pulse
 extern int PWM_shift;		//us
