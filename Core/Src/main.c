@@ -149,16 +149,17 @@ int main(void)
   MX_TIM15_Init();
   /* USER CODE BEGIN 2 */
   HAL_Delay(10);
-  lcd_init();
+  HD44780_Init(2);
+  HD44780_Clear();
+
+
   HAL_Delay(10);
-  lcd_clear();
-  HAL_Delay(10);
-  lcd_put_cur(0,0);
-  lcd_send_string ("PULSE SEPARATOR");
-  HAL_Delay(1000);
-  lcd_put_cur(1,0);
-  lcd_send_string ("ver 0.184");
-  HAL_Delay(1000);
+  HD44780_SetCursor(0,0);
+  HD44780_PrintStr("LASER Controller");
+  HAL_Delay(2000);
+  HD44780_SetCursor(7,1);
+  HD44780_PrintStr("ver 0.190");
+  HAL_Delay(2000);
 
   write_LCD(1);
   write_cur(1);

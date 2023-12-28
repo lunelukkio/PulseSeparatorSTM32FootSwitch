@@ -287,9 +287,9 @@ void EXTI1_IRQHandler(void)
 
   TIM7->CR1 |= TIM_CR1_CEN;								//counter enable
 
-  lcd_clear();
-  lcd_put_cur(0,0);
-  lcd_send_string ("Recording.....    ");					//Don't put this before recording. It makes long delay to making pulses.
+  HD44780_Clear();
+  HD44780_SetCursor(0,0);
+  HD44780_PrintStr("Recording.....    ");					//Don't put this before recording. It makes long delay to making pulses.
 
   /* USER CODE END EXTI1_IRQn 1 */
 }

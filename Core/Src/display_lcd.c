@@ -35,130 +35,130 @@ char *int2char(int num){
 
 void write_LCD(int panel){
 
-	lcd_clear();
+	HD44780_Clear();
 
 	if(panel == 1){
-		lcd_put_cur(0,0);
+		HD44780_SetCursor(0,0);
 		char* PWM1_width_char = int2char(PWM1_width);
-		lcd_send_string (PWM1_width_char);
-		lcd_send_string ("us");
+		HD44780_PrintStr(PWM1_width_char);
+		HD44780_PrintStr("us");
 
-		lcd_put_cur(0,8);
+		HD44780_SetCursor(8,0);
 		char* PWM2_width_char = int2char(PWM2_width);
-		lcd_send_string (PWM2_width_char);
-		lcd_send_string ("us");
+		HD44780_PrintStr(PWM2_width_char);
+		HD44780_PrintStr("us");
 
-		lcd_put_cur(1,0);
+		HD44780_SetCursor(0,1);
 		char* PWM_length_char = int2char(PWM_length);
-		lcd_send_string (PWM_length_char);
-		lcd_send_string ("ms");
+		HD44780_PrintStr(PWM_length_char);
+		HD44780_PrintStr("ms");
 
-		lcd_put_cur(1,9);
-		lcd_send_string ("REC");
+		HD44780_SetCursor(9,1);
+		HD44780_PrintStr("REC");
 
 	}else if(panel == 2){
-		lcd_put_cur(0,1);
+		HD44780_SetCursor(1,0);
 		if(current_mode == 0){
-			lcd_send_string ("Normal");
+			HD44780_PrintStr("Normal");
 		}else if(current_mode == 1){
-			lcd_send_string ("ShortC1");
+			HD44780_PrintStr("ShortC1");
 		}else if(current_mode == 2){
-			lcd_send_string ("ShortC2");
+			HD44780_PrintStr("ShortC2");
 		}
 
-		lcd_put_cur(0,8);
+		HD44780_SetCursor(8,0);
 		char* PWM_length_sub_char = int2char(PWM_length_sub);
-		lcd_send_string (PWM_length_sub_char);
-		lcd_send_string ("ms");
+		HD44780_PrintStr(PWM_length_sub_char);
+		HD44780_PrintStr("ms");
 
-		lcd_put_cur(1,1);
+		HD44780_SetCursor(1,1);
 		if(CW_mode == 0){
-			lcd_send_string ("CW None");
+			HD44780_PrintStr("CW None");
 		}else if(CW_mode == 1){
-			lcd_send_string ("CW Ch1");
+			HD44780_PrintStr("CW Ch1");
 		}else if(CW_mode == 2){
-			lcd_send_string ("CW Ch2");
+			HD44780_PrintStr("CW Ch2");
 		}else if(CW_mode == 3){
-			lcd_send_string ("CW Ch12");
+			HD44780_PrintStr("CW Ch12");
 		}
 
-		lcd_put_cur(1,9);
-		lcd_send_string ("MODE");
+		HD44780_SetCursor(9,1);
+		HD44780_PrintStr("MODE");
 
 	}else if(panel == 3){
-			lcd_put_cur(0,0);
+			HD44780_SetCursor(0,0);
 			char* PWM_delay_char = int2char(PWM_delay);
-			lcd_send_string (PWM_delay_char);
-			lcd_send_string ("us");
+			HD44780_PrintStr(PWM_delay_char);
+			HD44780_PrintStr("us");
 
-			lcd_put_cur(0,8);
+			HD44780_SetCursor(8,0);
 			char* PWM_shift_char = int2char(PWM_shift);
-			lcd_send_string (PWM_shift_char);
-			lcd_send_string ("us");
+			HD44780_PrintStr(PWM_shift_char);
+			HD44780_PrintStr("us");
 
-			lcd_put_cur(1,0);
+			HD44780_SetCursor(0,1);
 			char* PWM1_FQ_char = int2char(PWM1_FQ*10);					//This is only for PWM1 (usually PWM1 and 2 should be same value)
-			lcd_send_string (PWM1_FQ_char);
-			lcd_send_string ("Hz");
+			HD44780_PrintStr(PWM1_FQ_char);
+			HD44780_PrintStr("Hz");
 
-			lcd_put_cur(1,9);
-			lcd_send_string ("Setting");
+			HD44780_SetCursor(9,1);
+			HD44780_PrintStr("Setting");
 	}else if(panel ==0){
-		lcd_put_cur(0,1);
-		lcd_send_string ("Width");
+		HD44780_SetCursor(1,0);
+		HD44780_PrintStr("Width");
 
-		lcd_put_cur(0,8);
+		HD44780_SetCursor(8,0);
 		char* PWM_LED_width_char = int2char(PWM_LED_width);
-		lcd_send_string (PWM_LED_width_char);
-		lcd_send_string ("us");
+		HD44780_PrintStr(PWM_LED_width_char);
+		HD44780_PrintStr("us");
 
-		lcd_put_cur(1,0);
-		lcd_send_string ("-----");
+		HD44780_SetCursor(0,1);
+		HD44780_PrintStr("-----");
 
-		lcd_put_cur(1,9);
-		lcd_send_string ("FootSW");
+		HD44780_SetCursor(9,1);
+		HD44780_PrintStr("FootSW");
 	}
 }
 
 void write_cur(int cur_pos){
 	if(cur_pos == 1){
-		lcd_put_cur(0,0);
-		lcd_send_string (">");
-		lcd_put_cur(0,8);
-		lcd_send_string (" ");
-		lcd_put_cur(1,0);
-		lcd_send_string (" ");
-		lcd_put_cur(1,8);
-		lcd_send_string (" ");
+		HD44780_SetCursor(0,0);
+		HD44780_PrintStr(">");
+		HD44780_SetCursor(8,0);
+		HD44780_PrintStr(" ");
+		HD44780_SetCursor(0,1);
+		HD44780_PrintStr(" ");
+		HD44780_SetCursor(8,1);
+		HD44780_PrintStr(" ");
 	}
 	else if(cur_pos == 2){
-		lcd_put_cur(0,0);
-		lcd_send_string (" ");
-		lcd_put_cur(0,8);
-		lcd_send_string (">");
-		lcd_put_cur(1,0);
-		lcd_send_string (" ");
-		lcd_put_cur(1,8);
-		lcd_send_string (" ");
+		HD44780_SetCursor(0,0);
+		HD44780_PrintStr(" ");
+		HD44780_SetCursor(8,0);
+		HD44780_PrintStr(">");
+		HD44780_SetCursor(0,1);
+		HD44780_PrintStr(" ");
+		HD44780_SetCursor(8,1);
+		HD44780_PrintStr(" ");
 	}
 	else if(cur_pos == 3){
-		lcd_put_cur(0,0);
-		lcd_send_string (" ");
-		lcd_put_cur(0,8);
-		lcd_send_string (" ");
-		lcd_put_cur(1,0);
-		lcd_send_string (">");
-		lcd_put_cur(1,8);
-		lcd_send_string (" ");
+		HD44780_SetCursor(0,0);
+		HD44780_PrintStr(" ");
+		HD44780_SetCursor(8,0);
+		HD44780_PrintStr(" ");
+		HD44780_SetCursor(0,1);
+		HD44780_PrintStr(">");
+		HD44780_SetCursor(8,1);
+		HD44780_PrintStr(" ");
 	}
 	else if(cur_pos == 4){
-		lcd_put_cur(0,0);
-		lcd_send_string (" ");
-		lcd_put_cur(0,8);
-		lcd_send_string (" ");
-		lcd_put_cur(1,0);
-		lcd_send_string (" ");
-		lcd_put_cur(1,8);
-		lcd_send_string (">");
+		HD44780_SetCursor(0,0);
+		HD44780_PrintStr(" ");
+		HD44780_SetCursor(8,0);
+		HD44780_PrintStr(" ");
+		HD44780_SetCursor(0,1);
+		HD44780_PrintStr(" ");
+		HD44780_SetCursor(8,1);
+		HD44780_PrintStr(">");
 	}
 }

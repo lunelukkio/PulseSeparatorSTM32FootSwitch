@@ -19,6 +19,8 @@ EXIT10-15　13-quick setup push button（stm32 blue button）
 short C1 C2 length of each channe
 
 --------------------------------------------------------------------------------
+Ver 0.190
+chaged to a new LCD and i2c-lcd.c .h
 
 Ver 0.184
 deleted long delay mode(current mode 3)
