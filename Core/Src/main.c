@@ -1,10 +1,10 @@
 /* USER CODE BEGIN Header */
 
 /*
- * Pulse separator
+ * Laser controller
  * Kenichi Miyazaki
- * 2021/07/13
- * Ver 0.184 <<stable>>
+ * 2023/12/28
+ * Ver 0.190 <<stable>>
  */
 
 /**
