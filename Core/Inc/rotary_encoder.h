@@ -2,7 +2,6 @@
  * rotary_encoder.h
  *
  *  Created on: Sep 26, 2020
- *      Author: miyazaki
  */
 
 #ifndef INC_ROTARY_ENCODER_H_

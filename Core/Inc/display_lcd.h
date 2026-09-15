@@ -2,7 +2,6 @@
  * display_lcd.h
  *
  *  Created on: Jan 30, 2020
- *      Author: miyazaki
  */
 
 #ifndef INC_DISPLAY_LCD_H_
